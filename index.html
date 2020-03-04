@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="newsor.css">
+</head>
+<body>
+
+
+<div class="container">
+	<div class="row">
+		<div id="users" class="col-xs-12">
+			<div class="filter-group row">
+				<div class="form-group col-xs-12 col-sm-12 col-md-4">
+					<input type="text" class="search form-control" placeholder="Search" />
+				</div>
+				
+				<div class="form-group col-xs-12 col-sm-12 col-md-4">
+					
+					<div class="radio-inline">
+						<label>
+							<input  class="sort" type="radio" data-sort="price" /> Price
+						</label>
+					</div>
+				</div>
+				<div class="form-group col-xs-12 col-sm-12">
+					<button class="btn btn-danger" onclick="resetList();">Clear</button>
+				</div>
+			</div>
+			<ul class="list">
+				<li class="list--list-item" >
+					<h3 class="name">Patil Caterers</h3>
+					<p class="price">Price: 500/Dish</p>
+					<p class="address">Address: pimpri</p>
+					<p class="city">City: pune</p>
+					<p class="contact">Contact: 9087654543</p>
+				</li>
+				<li class="list--list-item" >
+					<h3 class="name">Foode Caterers</h3>
+					<p class="price">Price: 350/Dish</p>
+					<p class="address">Address: Kothrud</p>
+					<p class="city">City: pune</p>
+					<p class="contact">Contact: 9150875345</p>
+				</li>
+				<li class="list--list-item" >
+					<h3 class="name">A1 Caterers</h3>
+					<p class="price">Price: 400/Dish</p>
+					<p class="address">Address: shivaji nagar</p>
+					<p class="city">City: pune</p>
+					<p class="contact">Contact: 9908765676</p>
+				</li>    
+				<li class="list--list-item">
+					<h3 class="name">Mane Caterers</h3>
+					<p class="price">Price:580/Dish</p>
+					<p class="address">Address: pimpri</p>
+					<p class="city">City: pune</p>
+					<p class="contact">Contact: 8378654765</p>
+				</li>
+				
+				
+			</ul>
+			<div class="no-result">No Results</div>
+			<ul class="pagination"></ul>
+		</div>
+	</div>
+</div>
+
+
+
+
+
+<script >
+	var options = {
+	valueNames: [
+		'name',
+		'price',
+		'address',
+		'city'
+	],
+	page: 2,
+	pagination: true
+};
+var userList = new List('users', options);
+
+// sort by price-->
+$('.sort').on('keypress', function() {
+  var searchprice = $(this).val();
+  userList.sort(searchprice, ['price']);
+});
+
+
+
+
+function resetList(){
+	userList.search();
+	userList.filter();
+	userList.update();
+	$(".filter-all").prop('checked', true);
+	$('.filter').prop('checked', false);
+	$('.search').val('');
+	//console.log('Reset Successfully!');
+};
+  
+function updateList(){
+  var values_gender = $("input[name=gender]:checked").val();
+	var values_address = $("input[name=address]:checked").val();
+	console.log(values_gender, values_address);
+
+	userList.filter(function (item) {
+		var genderFilter = false;
+		var addressFilter = false;
+		
+		if(values_gender == "all")
+		{ 
+			genderFilter = true;
+		} else {
+			genderFilter = item.values().gender == values_gender;
+			
+		}
+		if(values_address == null)
+		{ 
+			addressFilter = true;
+		} else {
+			addressFilter = item.values().address.indexOf(values_address) >= 0;
+		}
+		return addressFilter && genderFilter
+	});
+	userList.update();
+	//console.log('Filtered: ' + values_gender);
+}
+                             
+$(function(){
+  //updateList();
+  $("input[name=gender]").change(updateList);
+	$('input[name=address]').change(updateList);
+	
+	userList.on('updated', function (list) {
+		if (list.matchingItems.length > 0) {
+			$('.no-result').hide()
+		} else {
+			$('.no-result').show()
+		}
+	});
+});
+</script>
+
+</body>
+</html>
