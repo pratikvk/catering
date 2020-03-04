@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="newsor.css">
+
+
+
+
+
+	<link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/pricing/">
+
+    <!-- Bootstrap core CSS -->
+    <link href="bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="pricing.css" rel="stylesheet">
+</head>
+<body>
+
+<!--<div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom box-shadow">
+      <h5 class="my-0 mr-md-auto font-weight-normal">Caterers Junction</h5>
+      <nav class="mx-md-2">
+		<input type="text" class="search form-control" placeholder="search" />
+	</nav>
+    
+     <input  class="sort" type="radio" data-sort="price" /> Price
+    	
+ </div>
+    -->
+
+   
+
+
+<div class="container">
+	<div class="row">
+		<div id="users" class="col-xs-12">
+			<!--header -->
+			<div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom box-shadow">
+	      		<h5 class="my-0 mr-md-auto font-weight-normal"><img src="img/logo.jpg" height="100px" width="100px"></h5>
+				<div class="col-xs-6">	      		
+					<input type="search" class="search form-control" placeholder="Search" />	
+					</div> 
+				<div class="col-xs-10">
+					<input  class="sort" type="radio" data-sort="price" /> Sort By Price &nbsp
+					<button class="btn btn-danger" onclick="resetList();">Clear</button>
+	     		</div>   
+   			</div>
+   			
+   			<!--end of header-->
+
+			<!--list--->
+			<ul class="list  card-deck mb-3 text-center">
+				<li class="list--list-item" >
+					<div class="card mb-4 box-shadow">				          
+				          <div class="card-body">
+				            <ul class="list-unstyled mt-3 mb-4">
+				            	<div class="card-header">
+				            		<h4 class="name">Foode Caterers</h4>
+				          		</div>
+				            		<h1 class="price">500 <small class="text-muted">/ Dish</small></h1>									
+									<p class="address">Address: kothrud</p>
+									<p class="city">City: pune</p>
+									<p class="contact">Contact: 9087654543</p>
+				            </ul>
+				           <button type="button" class="btn btn-lg btn-block btn-primary">View Details</button>
+				         </div>
+				     </div>
+				</li>
+
+				<li class="list--list-item" >
+					<div class="card mb-4 box-shadow">
+			         	<div class="card-body">			           
+			            	<ul class="list-unstyled mt-3 mb-4">
+			            		<div class="card-header">
+			           			    <h4 class="name">Mane Caterers</h4>
+			          			</div>
+			            	 		<h1 class="price">350 <small class="text-muted">/ Dish</small></h1>
+			                  		<h3 class=""></h3>
+									<p class="address">Address: shivajinagar</p>
+									<p class="city">City: pune</p>
+									<p class="contact">Contact: 9087654543</p>
+			            	</ul>
+			            <button type="button" class="btn btn-lg btn-block btn-primary">View Details</button>
+			          </div>
+			        </div>			      
+				</li>   
+
+
+				<li class="list--list-item">
+					<div class="card mb-4 box-shadow">			          
+					    <div class="card-body">
+					         <ul class="list-unstyled mt-3 mb-4">
+					            <div class="card-header">
+					           		 <h4 class="name">Patil Caterers</h4>
+					         	 </div>
+					            	<h1 class="price">500 <small class="text-muted">/ Dish</small></h1>
+									<p class="address">Address: pimpri</p>
+									<p class="city">City: pune</p>
+									<p class="contact">Contact: 9087654543</p>
+					         </ul>
+					        <button type="button" class="btn btn-lg btn-block btn-primary">View Details</button>
+					    </div>
+					 </div>
+				</li>
+
+				<li class="list--list-item" >
+					<div class="card mb-4 box-shadow">			          
+			          <div class="card-body">			          
+			            <ul class="list-unstyled mt-3 mb-4">
+			            	<div class="card-header">
+				            	<h4 class="name">A1 Caterers</h4>
+				         	</div>
+				            	<h1 class="price">300 <small class="text-muted">/ Dish</small></h1>
+								<p class="address">Address: shivajinagar</p>
+								<p class="city">City: pune</p>
+								<p class="contact">Contact: 9087654543</p>
+				            </ul>
+				            <button type="button" class="btn btn-lg btn-block btn-primary">View Details</button>
+				          </div>
+				     </div>
+			      
+				</li>    
+
+				<li class="list--list-item" >
+					<div class="card mb-4 box-shadow">
+			            <div class="card-body">
+			            	<ul class="list-unstyled mt-3 mb-4">
+			            		<div class="card-header">
+			            			<h4 class="name">Rane Caterers</h4>
+			        			 </div>
+			           				<h1 class="price">450 <small class="text-muted">/ Dish</small></h1>
+			             			<h3 class="name"></h3>								
+									<p class="address">Address: pimpri</p>
+									<p class="city">City: pune</p>
+									<p class="contact">Contact: 9087654543</p>
+			            	</ul>
+			            	<button type="button" class="btn btn-lg btn-block btn-primary">View Details</button>
+			          	</div>
+			        </div>			      
+				</li> 
+
+				<li class="list--list-item" >
+					<div class="card mb-4 box-shadow">
+			            <div class="card-body">
+			            	<ul class="list-unstyled mt-3 mb-4">
+			            		<div class="card-header">
+			            			<h4 class="name">Annpurna Caterers</h4>
+			        			 </div>
+			           				<h1 class="price">400 <small class="text-muted">/ Dish</small></h1>		
+									<p class="address">Address: camp</p>
+									<p class="city">City: pune</p>
+									<p class="contact">Contact: 9158301434</p>
+			            	</ul>
+			            	<button type="button" class="btn btn-lg btn-block btn-primary">View Details</button>
+			          	</div>
+			        </div>			      
+				</li> 
+			</ul>			
+
+				<div class="no-result">No Results</div>
+				<ul class="pagination"></ul>
+
+		</div>
+     </div>
+</div>
+
+<footer class="pt-4 my-md-5 pt-md-5 border-top">
+        <div class="row">
+          <div class="col-12 col-md">
+            <img class="mb-2"  alt="" width="24" height="24">
+            <small class="d-block mb-3 text-muted">© 2017-2018</small>
+          </div>
+          <div class="col-6 col-md">
+            <h5>Features</h5>
+            <ul class="list-unstyled text-small">
+              <li><a class="text-muted" href="https://getbootstrap.com/docs/4.0/examples/pricing/#">Cool stuff</a></li>
+              <li><a class="text-muted" href="https://getbootstrap.com/docs/4.0/examples/pricing/#">Random feature</a></li>
+              <li><a class="text-muted" href="https://getbootstrap.com/docs/4.0/examples/pricing/#">Team feature</a></li>
+              <li><a class="text-muted" href="https://getbootstrap.com/docs/4.0/examples/pricing/#">Stuff for developers</a></li>
+              <li><a class="text-muted" href="https://getbootstrap.com/docs/4.0/examples/pricing/#">Another one</a></li>
+              <li><a class="text-muted" href="https://getbootstrap.com/docs/4.0/examples/pricing/#">Last time</a></li>
+            </ul>
+          </div>
+          <div class="col-6 col-md">
+            <h5>Resources</h5>
+            <ul class="list-unstyled text-small">
+              <li><a class="text-muted" href="https://getbootstrap.com/docs/4.0/examples/pricing/#">Resource</a></li>
+              <li><a class="text-muted" href="https://getbootstrap.com/docs/4.0/examples/pricing/#">Resource name</a></li>
+              <li><a class="text-muted" href="https://getbootstrap.com/docs/4.0/examples/pricing/#">Another resource</a></li>
+              <li><a class="text-muted" href="https://getbootstrap.com/docs/4.0/examples/pricing/#">Final resource</a></li>
+            </ul>
+          </div>
+          <div class="col-6 col-md">
+            <h5>About</h5>
+            <ul class="list-unstyled text-small">
+              <li><a class="text-muted" href="https://getbootstrap.com/docs/4.0/examples/pricing/#">Team</a></li>
+              <li><a class="text-muted" href="https://getbootstrap.com/docs/4.0/examples/pricing/#">Locations</a></li>
+              <li><a class="text-muted" href="https://getbootstrap.com/docs/4.0/examples/pricing/#">Privacy</a></li>
+              <li><a class="text-muted" href="https://getbootstrap.com/docs/4.0/examples/pricing/#">Terms</a></li>
+            </ul>
+          </div>
+        </div>
+      </footer>
+
+<!--script-->
+
+<script >
+	var options = {
+	valueNames: [
+		'name',
+		'price',
+		'address',
+		'city'
+	],
+	page: 5,
+	pagination: true
+};
+var userList = new List('users', options);
+
+// sort by price-->
+$('.sort').on('keypress', function() {
+  var searchprice = $(this).val();
+  userList.sort(searchprice, ['price']);
+});
+
+
+
+
+function resetList(){
+	userList.search();
+	userList.filter();
+	userList.update();
+	$(".filter-all").prop('checked', true);
+	$('.filter').prop('checked', false);
+	$('.search').val('');
+	//console.log('Reset Successfully!');
+};
+  
+function updateList(){
+  var values_gender = $("input[name=gender]:checked").val();
+	var values_address = $("input[name=address]:checked").val();
+	console.log(values_gender, values_address);
+
+	userList.filter(function (item) {
+		var genderFilter = false;
+		var addressFilter = false;
+		
+		if(values_gender == "all")
+		{ 
+			genderFilter = true;
+		} else {
+			genderFilter = item.values().gender == values_gender;
+			
+		}
+		if(values_address == null)
+		{ 
+			addressFilter = true;
+		} else {
+			addressFilter = item.values().address.indexOf(values_address) >= 0;
+		}
+		return addressFilter && genderFilter
+	});
+	userList.update();
+	//console.log('Filtered: ' + values_gender);
+}
+                             
+$(function(){
+  //updateList();
+  $("input[name=gender]").change(updateList);
+	$('input[name=address]').change(updateList);
+	
+	userList.on('updated', function (list) {
+		if (list.matchingItems.length > 0) {
+			$('.no-result').hide()
+		} else {
+			$('.no-result').show()
+		}
+	});
+});
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+<link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/pricing/">
+
+    <!-- Bootstrap core CSS -->
+    <link href="bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="pricing.css" rel="stylesheet">
